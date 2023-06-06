@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    <!-- <input  type="text" class="searchBox" name="search" [(ngModel)]="filterText" ng-controller="filter" placeholder="Filter..." (click)="filterItems"/> -->
+    <table >
+        <thead>
+            <tr>
+                    <th >Student ID</th>
+                    <th >Name</th>
+                    <th>RollNo</th>
+                    <th>Class</th>
+                    <th>Division</th>
+                    <th>Stream</th>
+                    <th>Date</th>
+                    <th>File</th>
+                    <th>Operation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- |filter:searchText -->
+            <tr *ngFor="let student of students;let i=index ">
+           
+                <td>{{student.studentId}}</td>
+                <td>{{student.Name}}</td>
+                <td>{{student.RollNo}}</td>
+                <td>{{student.Class}}</td>
+                <td>{{student.Division}}</td>
+                <td>{{student.Stream}}</td>
+                <td>{{student.Date}}</td>
+                <td (click)="downloadDataWithId(student.studentId)"> {{student.File.name}}</td>
+                <td>
+                    <button (click)="updateStudent(i)">Edit</button>
+                    <button (click)="deleteStudent(i)">Delete</button>
+                </td>
+            </tr>
+            
+        </tbody>
+    </table>
+
+
+</body>
+</html>

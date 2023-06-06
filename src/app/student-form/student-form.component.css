@@ -1,0 +1,70 @@
+body{
+    margin-top: 1%;
+    text-align: center;
+  }
+  form{
+   
+        border-radius: 8px;
+        padding: 20px;
+        background-color: #f0f0f0;
+        width: 50vh;
+        margin: 0vh 70vh;
+        display:flex;
+        flex-direction: column;
+        align-items:flex-start;
+        box-shadow: 0 2px 4px (0,0,0,0.5);
+    }
+  
+    .custom-form-field{
+        
+        margin: 1% 15%;
+        width: 40vh;
+  
+    }
+  
+    .custom-form-button{
+      background-color: white;
+      width: 30vh;
+      height: 7vh;
+      margin-left:22%;
+      margin-bottom: 15%;
+    }
+    
+    input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  @media screen and(max-width:500px) {
+      form{
+        /* display: block;       */
+        padding: 10px;
+        margin: 0 20;
+      }
+      .custom-form-field{
+        margin: 0% 5%;
+        width: 20vh;
+      }
+  }
+
+/* File Upload Style  */
+  .inputWrapper {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+.fileInput {
+    cursor: pointer;
+    height: 100%;
+    position:absolute;
+    top: 0;
+    right: 0;
+    z-index: 99;
+    font-size:50px;
+    opacity: 0;
+    /* -moz-opacity: 0; */
+    /* filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0) */
+}

@@ -1,0 +1,22 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="window">
+
+      <div class="header">
+        <a routerLink="/student-table">Click to View Table </a>
+        <a routerLink="/student-form" >Click to View Form </a>
+      </div>
+      <router-outlet></router-outlet>
+    </div>
+    <!-- <agm-map [latitude]="lat" [longitude]="lng">
+      <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+    </agm-map> -->
+  </body>
+  </html>

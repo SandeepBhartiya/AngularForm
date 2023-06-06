@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+     <form [formGroup]="myForm" (ngSubmit)="submitForm()" class="custome-form">
+   
+        <!-- <div>
+  
+           <mat-form-field apperance="fill" class="custom-form-field">
+            <mat-label>studentId</mat-label>
+             <input matInput id="studentId" type="text"  formControlName="studentId"   placeholder="Ex .sid01"/>
+              <mat-error *ngIf="myForm.get('studentId')?.errors?.['required']  && myForm.get('studentId')?.touched">studentId is Required</mat-error>
+           </mat-form-field>
+       </div>
+        -->
+       
+       <div>
+          <mat-form-field apperance="fill" class="custom-form-field">
+            <mat-label>Name</mat-label>
+            <input matInput type="text" formControlName="Name" name="Name" placeholder="Ex .Sandeep Bhartiya"    required/><br/>
+            <mat-error *ngIf="myForm.get('Name')?.errors?.['required'] && myForm.get('Name')?.touched">Name is required</mat-error>
+          </mat-form-field>
+        </div>
+       
+       
+        <div>
+          <mat-form-field apperance="fill" class="custom-form-field">
+            <mat-label for="Rollno">RollNo</mat-label>
+            <input matInput type="number" formControlName="RollNo"  name="RollNo" placeholder="Ex .01"   required><br/>
+            <mat-error *ngIf="myForm.get('RollNo')?.errors?.['required'] && myForm.get('RollNo')?.touched">RollNo is required</mat-error>
+          </mat-form-field>
+        </div>
+       
+       
+        <div>
+          <mat-form-field apperance="fill" class="custom-form-field">
+            <mat-label>Class</mat-label>
+            <input matInput type="number" formControlName="Class"  name="Class" placeholder="Ex.11"  required /><br/>
+            <mat-error *ngIf="myForm.get('Class')?.errors?.['required'] && myForm.get('Class')?.touched">Class is required</mat-error>
+          </mat-form-field>
+        </div>
+       
+       
+        <div>
+          <mat-form-field apperance="fill" class="custom-form-field">
+            <mat-label>Division</mat-label>
+            <input matInput type="text" formControlName="Division"  name="Division" placeholder="Ex .A"   required><br/>  
+            <mat-error *ngIf="myForm.get('Division')?.errors?.['required'] && myForm.get('Division')?.touched">Division is required</mat-error>
+          </mat-form-field>
+        </div>
+       
+       
+        <div >
+          <mat-form-field apperance="fill" class="custom-form-field">
+            <mat-label>Stream</mat-label>
+            <input matInput type="text" formControlName="Stream"  name="Stream" placeholder="Ex .Science"   required><br/>
+            <mat-error *ngIf="myForm.get('Stream')?.errors?.['required'] && myForm.get('Stream')?.touched">Stream is required</mat-error>
+          </mat-form-field>
+        </div>
+        
+           
+        <div >
+          <mat-form-field apperance="fill" class="custom-form-field">
+            <mat-label>Choose Date</mat-label>
+            <input matInput  [matDatepicker]="picker" id="Date" formControlName="Date"  name="Date" placeholder="Ex .6/13/1998"  [max]="getCurrentDate()"  required><br/>
+            <mat-error *ngIf="myForm.get('Date')?.errors?.['required'] && myForm.get('Date')?.touched">Date is required</mat-error>
+            <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
+            <mat-datepicker-toggle matIconSuffix [for]="picker">
+              <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+            </mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+     
+        <div class="inputWrapper">
+          <mat-form-field class="custom-form-field">
+            <mat-label>Select File</mat-label> 
+            <input matInput  [value]="selectFileName" readonly/>
+            <button mat-button>
+              <mat-icon>attach_file</mat-icon>
+            </button>
+            <input class="fileInput" formControlName="File" id="File" type="file"  (change)="uploadFile()"  >
+            <!-- <mat-error *ngIf="myForm.get('File')?.errors?.['required'] && myForm.get('File')?.touched">File is Required</mat-error>  -->
+          </mat-form-field>
+
+        </div>
+        <button mat-stroked-button  color="primary" type="submit" class="custom-form-button">
+          {{isEditing?'Update':'Add'}}
+        </button>
+      
+      </form> 
+      
+</body>
+</html>
